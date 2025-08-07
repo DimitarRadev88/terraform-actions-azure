@@ -33,13 +33,13 @@ jobs:
         run: terraform init
 
       - name: Terraform Plan
-        run: terraform plan -var-file="values.tfvars"
+        run: terraform plan -var-file="values.tfvars" -out "tfplan"
         
       - name: Publish Terraform Plan
         uses: actions/upload-artifact@v4
         with:
           name: tfplan
-          path: /tfplan
+          path: tfplan
 
   terraform-apply:
     name: Terraform Apply
