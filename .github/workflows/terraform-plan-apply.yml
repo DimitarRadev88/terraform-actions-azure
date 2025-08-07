@@ -44,8 +44,7 @@ jobs:
   terraform-apply:
     name: Terraform Apply
     runs-on: ununtu-latest
-    needs: 
-      - terraform-plan
+    needs: [terraform-plan]
 
     steps:
       - name: Checkout
