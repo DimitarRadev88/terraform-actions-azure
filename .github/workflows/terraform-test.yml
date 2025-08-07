@@ -6,7 +6,7 @@ on:
 
 jobs:
   terraform-test:
-    name: Set up job
+    name: Terraform Test
     runs-on: ubuntu-latest
 
     steps:
