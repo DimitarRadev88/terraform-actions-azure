@@ -7,6 +7,13 @@ terraform {
   }
 }
 
+backend "azurerm" {
+  resource_group_name  = "StorageRG"
+  storage_account_name = "tasboardstoragedrr"
+  container_name       = "taskboardcontainer"
+  key                  = "terraform.tfstate"
+}
+ 
 provider "azurerm" {
   features {}
   subscription_id = "3d77f1dd-d051-49aa-8606-3f3d77cda1e6"
