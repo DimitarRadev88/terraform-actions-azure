@@ -1,0 +1,24 @@
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  terraform-test:
+    name: Set up job
+    runs-on: ubuntu-latest
+
+    steps:
+       - name: Checkout
+         uses: actions/checkout@v4
+       - name: Setup Terraform
+         uses: hashicorp/setup-terraform@v3
+         with:
+           terraform_version: "1.1.7"
+       - name: Tarraform init
+         run: terraform init
+       - name: Terraform format
+         run: terraform fmt -check -recursive
+       - name: Terraform validate
+         run: terraform validate
+      
